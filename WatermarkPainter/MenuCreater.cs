@@ -24,7 +24,7 @@ namespace WatermarkPainter
 
         static ToolStripMenuItem MenuItem()
         {
-            ToolStripMenuItem major = new ToolStripMenuItem("Watermark") { ToolTipText = "Change the settings of watermark." };
+            ToolStripMenuItem major = new ToolStripMenuItem("Watermark", Properties.Resources.WatermarkIcon128) { ToolTipText = "Change the settings of watermark." };
 
             var file = new ToolStripMenuItem("File Location");
             file.ToolTipText = WPainter.ImagePath;

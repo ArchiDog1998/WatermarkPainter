@@ -7,6 +7,7 @@
     <Description>Description of WatermarkPainter</Description>
     <TargetExt>.gha</TargetExt>
 	  <UseWindowsForms>true</UseWindowsForms>
+	  <PackageIcon>WatermarkIcon128.png</PackageIcon>
   </PropertyGroup>
   
   <ItemGroup>
@@ -27,6 +28,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Update="Resources\WatermarkIcon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="Resources\WatermarkIcon128.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
   
   <PropertyGroup Condition="$(Configuration) == 'Debug' AND $([MSBuild]::IsOSPlatform(Windows))">

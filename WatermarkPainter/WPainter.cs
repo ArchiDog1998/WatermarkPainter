@@ -139,7 +139,7 @@ namespace WatermarkPainter
                     return new RectangleF(controlW - width, (controlH - height) / 2, width, height);
 
                 case ContentAlignment.MiddleCenter:
-                    return new RectangleF((controlW - width) / 2, (controlH - height) / 2, width, height);
+                    return new RectangleF(0, 0, controlW, controlH);
             }
         }
 
