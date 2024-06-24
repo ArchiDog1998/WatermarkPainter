@@ -1,53 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <Version>1.0</Version>
     <Title>WatermarkPainter</Title>
     <Description>Description of WatermarkPainter</Description>
     <TargetExt>.gha</TargetExt>
 	  <UseWindowsForms>true</UseWindowsForms>
 	  <PackageIcon>WatermarkIcon128.png</PackageIcon>
+	  <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+	  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="Grasshopper" Version="7.0.20314.3001" IncludeAssets="compile;build" />
-    <PackageReference Include="Lib.Harmony" Version="2.2.2" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  
-  <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  
-  <ItemGroup>
-    <None Update="Resources\WatermarkIcon.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Update="Resources\WatermarkIcon128.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-  
-  <PropertyGroup Condition="$(Configuration) == 'Debug' AND $([MSBuild]::IsOSPlatform(Windows))">
-    <StartProgram>C:\Program Files\Rhino 7\System\Rhino.exe</StartProgram>
-    <StartArguments></StartArguments>
-    <StartAction>Program</StartAction>
-  </PropertyGroup>
-
-	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-		<Exec Command="Copy &quot;$(TargetPath)&quot; &quot;$(AppData)\Grasshopper\Libraries\$(ProjectName).gha&quot;" />
-	</Target>
+	  <PackageReference Include="Grasshopper" Version="8.8.24163.12481" />
+	  <PackageReference Include="Lib.Harmony" Version="2.3.3" />
+	  <PackageReference Include="SimpleGrasshopper" Version="1.8.2" />
+	  <EmbeddedResource Include="Resources\*.png" />
+  </ItemGroup> 
 </Project>
